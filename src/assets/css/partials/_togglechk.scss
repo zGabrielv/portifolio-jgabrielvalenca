@@ -1,0 +1,81 @@
+// ----------- ESTILOS DARK/LIGHT MODE -----------//
+
+.page {
+  background: $primary-normal;
+  color: $secondary-normal;
+}
+
+#dark-mode-input {
+  display: none;
+}
+
+.dark-mode-toggler {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 15px;
+  font-size: 40px;
+  transform: translateX(-50%);
+  left: 50%;
+
+  background-size: cover;
+  cursor: pointer;
+}
+
+
+#dark-mode-input:checked~.page {
+  background: $secondary-normal;
+  color: $primary-normal;
+  
+  a {
+    color: $preto-claro;
+  }
+
+  .hero {
+    opacity: 1;
+    background-image: url(../images/bg-light.jpg);
+
+
+  }
+
+  .divider {
+    background-color: $preto-claro;
+  }
+
+  #dot-nav {
+    a.is-selected .dot {
+      background-color: $cinza;
+    }
+
+    .dot {
+      background: $preto-claro;
+      transition: transform .2s, background-color .5s;
+      transform-origin: 50% 50%;
+    }
+  }
+
+  .pre-btn,
+  .nxt-btn {
+
+    background: $secondary-normal ;
+    color: $primary-normal;
+
+  }
+}
+
+
+
+#toggleButton {
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 2.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>J. Gabriel | Front End</title>
+</head>
+
+<body>
+    <input type="checkbox" id="dark-mode-input">
+    <div class="page">
+        <header>
+            <nav class="navmenu">
+                <ul>
+                    <li class="dot-container">
+                        <a class="active" href="#intro-section">
+                            <span class="dot"></span>
+                            <span class="dot-label">Introdução</span>
+                        </a>
+                    </li>
+                    <li class="dot-container">
+                        <a href="#about-section">
+                            <span class="dot"></span>
+                            <span class="dot-label">Sobre</span>
+                        </a>
+                    </li>
+                    <li class="dot-container">
+                        <a href="#skills-section">
+                            <span class="dot"></span>
+                            <span class="dot-label">Habilidades</span>
+                        </a>
+                    </li>
+                    <li class="dot-container">
+                        <a href="#projects-section">
+                            <span class="dot"></span>
+                            <span class="dot-label">Projetos</span>
+                        </a>
+                    </li>
+                    <li class="dot-container">
+                        <a href="#contact-section">
+                            <span class="dot"></span>
+                            <span class="dot-label">Contato</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+        <main>
+
+
+            <section id="intro-section" class=" hero">
+
+                <div class="title-bg">
+                    <h1 class="title">J. Gabriel Valença</h1>
+                    <p class="subtitle">Desenvolvedor Front End</p>
+                    <label for="dark-mode-input" class="dark-mode-toggler">
+                        <span id="toggleButton" class="moon" onclick="toggleIcon()">
+                            <i class="fas fa-moon"></i>
+                        </span>
+                    </label>
+                    <a href="#about-section">
+                        <i class=" arrow-down fas fa-chevron-down"></i>
+                    </a>
+                </div>
+
+            </section>
+            <section id="about-section" class="container">
+                <div class="about-content">
+                    <img src="./src/assets/images/jg.png" class="jg-avatar" alt="">
+                    <div class="about-links">
+                        <a href="#"><i class="social-icon fa-brands fa-linkedin fa-2x"></i></a>
+                        <a href="#"><i class="social-icon fa-brands fa-github fa-2x"></i></a>
+                    </div>
+
+                </div>
+                <div class="about-content">
+                    <h2>Olá! Sou J. Gabriel,</h2>
+
+                    <p>Desenvolvedor front-end apaixonado por criar experiências digitais inovadoras.
+                        <span class="divider"></span>
+                        Formado em
+                        Análise e Desenvolvimento de Sistemas e pós-graduando em Dev Foundations pela FIAP. Acredito
+                        na colaboração e no aprendizado contínuo para acompanhar as tendências digitais. Transformo
+                        ideias em realidades digitais impactantes. Nas horas vagas, escrevo, jogo vídeo game ou
+                        pratico meus hobbies favoritos.
+                    </p>
+
+
+                </div>
+
+            </section>
+
+            <section id="skills-section" class="section container">
+                <div class="content-title">
+                    <h2>Habilidades</h2>
+                    <span class="divider"></span>
+                </div>
+                <div class="section-content">
+                    <h3>DESENVOLVIMENTO</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Sass</li>
+                        <li>Git</li>
+                        <li>Github</li>
+                    </ul>
+                </div>
+                <div class="section-content">
+                    <h3>CONHECIMENTOS GERAIS</h3>
+                    <ul>
+                        <li>Excel</li>
+                        <li>PowerBI</li>
+                        <li>PowerApps</li>
+                        <li>Canva</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects-section" class="section container">
+                <div class="content-title">
+                    <h2>Projetos</h2>
+                    <span class="divider"></span>
+                </div>
+                <div class="project-content">
+                    <button class="pre-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nxt-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="product-container">
+
+                        <!-- Card de projeto -->
+                        <div class="product-card">
+
+                            <img src="./src/assets/images/bg-light.jpg" class="product-thumb" alt="">
+
+
+                            <div class="product-info">
+                                <h2 class="product-brand">brand</h2>
+                                <p class="product-short-description">Lorem ipsum dolor sit amet .</p>
+                            </div>
+                        </div>
+                        <!-- Card de projeto -->
+                        <div class="product-card">
+
+                            <img src="./src/assets/images/bg-light.jpg" class="product-thumb" alt="">
+
+
+                            <div class="product-info">
+                                <h2 class="product-brand">brand</h2>
+                                <p class="product-short-description">Lorem ipsum dolor sit amet .</p>
+                            </div>
+                        </div>
+                        <!-- Card de projeto -->
+                        <div class="product-card">
+
+                            <img src="./src/assets/images/bg-light.jpg" class="product-thumb" alt="">
+
+
+                            <div class="product-info">
+                                <h2 class="product-brand">brand</h2>
+                                <p class="product-short-description">Lorem ipsum dolor sit amet .</p>
+                            </div>
+                        </div>
+                        <!-- Card de projeto -->
+                        <div class="product-card">
+
+                            <img src="./src/assets/images/bg-light.jpg" class="product-thumb" alt="">
+
+
+                            <div class="product-info">
+                                <h2 class="product-brand">brand</h2>
+                                <p class="product-short-description">Lorem ipsum dolor sit amet .</p>
+                            </div>
+                        </div>
+                        <!-- Card de projeto -->
+                        <div class="product-card">
+
+                            <img src="./src/assets/images/bg-light.jpg" class="product-thumb" alt="">
+
+
+                            <div class="product-info">
+                                <h2 class="product-brand">brand</h2>
+                                <p class="product-short-description">Lorem ipsum dolor sit amet .</p>
+                            </div>
+                        </div>
+                        <!-- Card de projeto -->
+                        <div class="product-card">
+
+                            <img src="./src/assets/images/bg-light.jpg" class="product-thumb" alt="">
+
+
+                            <div class="product-info">
+                                <h2 class="product-brand">brand</h2>
+                                <p class="product-short-description">Lorem ipsum dolor sit amet .</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="contact-section" class="section container ">
+                <div class="content-title">
+                    <h2>Contato</h2>
+                    <span class="divider"></span>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h3>Envie uma mensagem:</h3>
+                        <form id="contact-form" method="post">
+                            <input type="text" name="name" placeholder="Seu Nome" required>
+                            <input type="email" name="_replyto" placeholder="Seu E-mail" required>
+                            <input type="text" name="_subject" placeholder="Assunto" required>
+                            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Informações de Contato:</h3>
+                        <p>Email: contato@valencahsolutions.com.br</p>
+                        <div class="social-media">
+                            <h3>Redes Sociais:</h3>
+                            <div>
+                                <a href="#"><i class="social-icon fa-brands fa-linkedin fa-2x"></i></a>
+                                <a href="#"><i class="social-icon fa-brands fa-github fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="">
+            <p>&copy; Copyright 2024 Todos os direitos reservados. by Valencah Solutions</p>
+        </footer>
+    </div>
+
+    <script src="./src/assets/js/navmenu.js"></script>
+    <script src="./src/assets/js/darkmode.js"></script>
+    <script src="./src/assets/js/projects.js"></script>
+</body>
+
+</html>

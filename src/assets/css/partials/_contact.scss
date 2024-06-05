@@ -1,0 +1,101 @@
+/* ----------- ESTILOS FORMULÁRIO DE CONTATO -----------*/
+
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+    gap: 40px;
+}
+
+.contact-form {
+    flex: 2;
+    
+    padding: 30px;
+    
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    button {
+        
+        background-color: $primary-normal; 
+        color: $secondary-normal;
+        padding: 10px 20px;
+        border: solid 1px;
+        font-size: 18px;
+        width: calc(100% - 22px);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: $blue-normal; 
+    }
+}
+
+
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+
+
+.contact-info {
+    flex: 1;
+    
+    justify-content: center;
+    align-items: center;
+    h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: 10px;   
+        text-align: center;
+    }
+    div{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+
+.social-media {
+    margin-top: 20px;
+    
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
+
+
+.social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 32px;
+    
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: $blue-normal;
+}

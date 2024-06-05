@@ -1,0 +1,70 @@
+// ----------- ESTILOS BARRA DE NAVEGAÇÃO -----------//
+
+.navmenu {
+    position: fixed;
+    top: 50%;
+    right: 65px;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+    ul {
+        position: relative;
+
+        li {
+            padding: 12px 0;
+            padding-left: 10px;
+            text-align: right;
+            a {
+                display: inline-block;
+                text-decoration: none;
+                position: relative;
+                .dot {
+                    content: "";
+                    position: absolute;
+                    background: $preto-claro;
+                    width: 18px;
+                    height: 18px;
+                    right: -24px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-radius: 50px;
+                    transition: background 550ms;
+                }
+                span{
+                    float: right;
+                    display: inline-block;
+                    transform: scale(.8);
+                }
+            }
+            a::after{
+                clear: both;
+                content: "";
+                display: table;
+            }
+            a.active {
+                font-weight: 700;
+                .dot{
+                    background: $blue-normal;
+                }
+            }
+            a:focus span, a:hover span{
+                opacity: 1;
+            }
+
+            .dot-label{
+                text-transform: uppercase;
+                opacity: 0;
+                transition: transform .2s, opacity .2s;
+                transform-origin: 100% 50%;
+            }
+           
+        }
+    }
+
+}
+
+.navmenu.show {
+    pointer-events: auto;
+    opacity: 1;
+}

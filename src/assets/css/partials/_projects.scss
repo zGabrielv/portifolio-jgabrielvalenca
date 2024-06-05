@@ -1,0 +1,187 @@
+/* ----------- ESTILOS PROJETOS -----------*/
+.project-content{
+    position: relative;
+    max-width: 1440px;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.product-container{
+    padding: 0 1vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    min-width: 590px;
+    height: 70vh;
+    // scrollbar-width: none;
+    gap: 25px;
+}
+
+// .product-container::-webkit-scrollbar{
+//     display: none;
+// }
+
+.product-card{
+    flex: 0 0 auto;
+    width: 400px;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image{
+    position: relative;
+    width: 100%;
+    height: 550px;
+}
+
+.product-thumb{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+
+
+.product-info{
+    width: 88%;
+    height: 250px;
+    background-color: $blue-normal;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    position: absolute;
+    bottom: -13.8rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+
+
+
+.pre-btn, .nxt-btn{
+    border: none;
+    width: 3vw;
+    height: 9vh;
+    position: absolute;
+    top:55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $primary-normal;
+    color: $secondary-normal;
+    border: solid 1px;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.pre-btn{
+    left: 0;
+}
+
+.nxt-btn{
+    right: 0;
+}
+
+.pre-btn i, .nxt-btn i{
+    opacity: 0.2;
+}
+
+.pre-btn:hover i, .nxt-btn:hover i{
+    opacity: 1;
+}
+.collection-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.collection{
+    position: relative;
+}
+
+.collection img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.collection p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+.collection:nth-child(3){
+    grid-column: span 2;
+    margin-bottom: 10px;
+}
+
+
+
+.product-card:hover .product-info{
+    animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+
+.product-card:hover {
+    animation: remove-overflow 2s forwards;
+  }
+  
+  .product-card:not(:hover) {
+    animation: show-overflow 2s forwards;
+  }
+  
+  .product-card:not(:hover) .product-info {
+    animation: remove-data 1s forwards;
+  }
+  
+  /* Card animation */
+  @keyframes show-data {
+    50% {
+      transform: translateY(-16rem);
+    }
+    100% {
+      transform: translateY(-7rem);
+    }
+  }
+  
+  @keyframes remove-overflow {
+    to {
+      overflow: initial;
+    }
+  }
+  
+  @keyframes remove-data {
+    0% {
+      transform: translateY(-7rem);
+    }
+    50% {
+      transform: translateY(-15rem);
+    }
+    100% {
+      transform: translateY(2rem);
+    }
+  }
+  
+  @keyframes show-overflow {
+    0% {
+      overflow: initial;
+      pointer-events: none;
+    }
+    50% {
+      overflow: hidden;
+    }
+  }
