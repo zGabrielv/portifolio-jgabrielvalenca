@@ -1,12 +1,15 @@
 {
-    "name": "seu-projeto",
-    "version": "1.0.0",
-    "description": "Descrição do seu projeto",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js"
-    },
-    "dependencies": {
-        "node-fetch": "^2.7.0"
-    }
+  "name": "seu-projeto",
+  "version": "1.0.0",
+  "description": "Descrição do seu projeto",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
