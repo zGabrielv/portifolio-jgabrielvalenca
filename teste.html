@@ -27,7 +27,7 @@
                 message: document.querySelector('textarea[name="message"]').value,
             };
 
-            fetch('/api/sendEmail.js', {
+            fetch('/api/sendEmail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
