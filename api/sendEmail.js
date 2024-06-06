@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
             const response = await fetch('https://mail.zoho.com/api/accounts/854700766/messages', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Zoho-oauthtoken https://www.valencahsolutions.com.br/callback?code=1000.36d6ddd6aa1998aa78140fe38a282c71.8e8090f56a984b900aa47b726bbf3e4f&location=us&accounts-server=https%3A%2F%2Faccounts.zoho.com', // Substitua pelo seu token de autenticação
+                    'Authorization': 'Zoho-oauthtoken 1000.d198af82d855b1a572e4ca145ebcc5c3.91884ad797d3a071732a1b1a30981039', // Substitua pelo seu token de autenticação
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
