@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sua Página</title>
+</head>
+<body>
+    <div class="contact-form">
+        <h3>Envie uma mensagem:</h3>
+        <form id="contact-form" method="post" onsubmit="enviarFormulario(event)">
+            <input type="text" name="name" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu E-mail" required>
+            <input type="text" name="subject" placeholder="Assunto" required>
+            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function enviarFormulario(event) {
+    event.preventDefault();
+
+    const nome = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const assunto = document.querySelector('input[name="subject"]').value;
+    const mensagem = document.querySelector('textarea[name="message"]').value;
+    const codigoAutorizacao = '1000.0f74675e5b1c572c86eeca10571ca879.a0c8109a068300af493b521f219304a5'; // Substitua pelo código de autorização
+
+    // Obter token de acesso OAuth
+    fetch('https://accounts.zoho.com/oauth/v2/token', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            'code': codigoAutorizacao,
+            'client_id': '1000.FO330TI4SFWWQ1HPU7OAM7VZHH6FOD',
+            'client_secret': '6b7ddb66d934804487bd551f3004badaea995eaec9',
+            'redirect_uri': 'https://www.valencahsolutions.com.br/callback',
+            'grant_type': 'authorization_code'
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Token de acesso:', data.access_token);
+        // Enviar email após obter o token de acesso
+        enviarEmail(data.access_token, nome, email, assunto, mensagem);
+    })
+    .catch(error => {
+        console.error('Erro ao trocar código de autorização pelo token de acesso:', error);
+    });
+}
+
+function enviarEmail(tokenDeAcesso, nome, email, assunto, mensagem) {
+    const data = {
+        "fromAddress": email,
+        "toAddress": "contato@valencahsolutions.com.br", // Substitua pelo seu email do Zoho
+        "subject": assunto,
+        "content": `Nome: ${nome}\nEmail: ${email}\n\nMensagem:\n${mensagem}`
+    };
+
+    fetch('https://mail.zoho.com/api/accounts/{accountId}/messages', {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Zoho-oauthtoken ' + tokenDeAcesso,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Mensagem enviada com sucesso!');
+            window.location.href = 'index.html'; // Substitua pelo nome do arquivo da sua página inicial
+        } else {
+            response.json().then(error => {
+                alert(`Erro ao enviar mensagem: ${error.message}`);
+            });
+        }
+    })
+    .catch(error => {
+        alert(`Erro ao enviar mensagem: ${error.message}`);
+    });
+}
+    </script>
+</body>
+</html>
