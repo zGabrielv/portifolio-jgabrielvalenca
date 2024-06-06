@@ -2,7 +2,7 @@
     "rewrites": [
       { "source": "/callback", "destination": "/callback.html" },
       { "source": "/teste", "destination": "/teste.html" },
-      { "source": "/api/sendEmail", "destination": "/api/sendEmail.js" }
+      { "source": "/api/sendEmail", "destination": "./api/sendEmail.js" }
     ]
   }
   
