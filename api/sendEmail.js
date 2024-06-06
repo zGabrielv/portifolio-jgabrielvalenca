@@ -3,20 +3,25 @@
 const fetch = require('node-fetch');
 
 module.exports = async (req, res) => {
+    if (req.method !== 'POST') {
+        res.status(405).json({ message: 'Método não permitido' });
+        return;
+    }
+
+    const { name, email, subject, message } = req.body;
+
+    const data = {
+        "fromAddress": email,
+        "toAddress": "contato@valencahsolutions.com.br",
+        "subject": subject,
+        "content": `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`
+    };
+
     try {
-        const { name, email, subject, message } = req.body;
-
-        const data = {
-            "fromAddress": email,
-            "toAddress": "contato@valencahsolutions.com.br",
-            "subject": subject,
-            "content": `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`
-        };
-
         const response = await fetch('https://mail.zoho.com/api/accounts/854700766/messages', {
             method: 'POST',
             headers: {
-                'Authorization': 'Zoho-oauthtoken YOUR_ZOHO_AUTH_TOKEN',
+                'Authorization': 'Zoho-oauthtoken https://www.valencahsolutions.com.br/callback?code=1000.36d6ddd6aa1998aa78140fe38a282c71.8e8090f56a984b900aa47b726bbf3e4f&location=us&accounts-server=https%3A%2F%2Faccounts.zoho.com',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
