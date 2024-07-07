@@ -35,8 +35,12 @@
     opacity: 1;
     background-image: url(../images/bg-light.jpg);
 
-
+    div {
+      background:$secondary-semi-transparent;
+  
+    }
   }
+
 
   .divider {
     background-color: $preto-claro;

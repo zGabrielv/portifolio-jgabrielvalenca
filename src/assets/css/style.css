@@ -135,6 +135,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.3764705882);
 }
 .hero h1 {
   font-size: 74px;
@@ -145,6 +146,19 @@
   font-weight: 100;
 }
 
+@media screen and (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
+  .hero h1 {
+    font-size: 54px;
+    padding: 0 14px;
+    width: 100%;
+  }
+  .hero p {
+    font-size: 28px;
+  }
+}
 .arrow-down {
   position: absolute;
   bottom: 30px;
@@ -192,6 +206,16 @@
   height: auto;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 24px 12px;
+    text-align: center;
+  }
+  .about-content {
+    padding: 18px;
+  }
+}
 .about-links {
   display: flex;
   justify-content: center;
@@ -268,6 +292,9 @@ footer {
 #dark-mode-input:checked ~ .page .hero {
   opacity: 1;
   background-image: url(../images/bg-light.jpg);
+}
+#dark-mode-input:checked ~ .page .hero div {
+  background: rgba(255, 255, 255, 0.709);
 }
 #dark-mode-input:checked ~ .page .divider {
   background-color: #282828;
@@ -455,6 +482,21 @@ footer {
   z-index: 9;
 }
 
+@media screen and (max-width: 768px) {
+  .project-content {
+    width: 80vw;
+  }
+  .product-container {
+    height: 75vh;
+  }
+  .product-card {
+    width: 70vw;
+  }
+  .pre-btn, .nxt-btn {
+    width: 7vw;
+    padding: 16px;
+  }
+}
 .pre-btn {
   left: 0;
 }
