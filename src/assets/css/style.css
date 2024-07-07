@@ -88,6 +88,14 @@
   opacity: 1;
 }
 
+@media screen and (max-width: 768px) {
+  .navmenu {
+    right: 40px;
+  }
+  .navmenu a {
+    padding: 6px;
+  }
+}
 .container {
   max-width: 1440px;
   margin: 10px auto;
@@ -493,8 +501,7 @@ footer {
     width: 70vw;
   }
   .pre-btn, .nxt-btn {
-    width: 7vw;
-    padding: 16px;
+    display: none;
   }
 }
 .pre-btn {

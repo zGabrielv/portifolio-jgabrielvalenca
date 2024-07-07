@@ -68,3 +68,14 @@
     pointer-events: auto;
     opacity: 1;
 }
+
+@media screen and (max-width: 768px){
+    
+    .navmenu {
+        right: 40px;
+        a {
+            padding: 6px;
+        }
+    }
+
+}
